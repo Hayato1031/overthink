@@ -1,3 +1,4 @@
+<h1>おーばーしんく！</h1>
 <% if session[:user] == nil %>
     <div class="center">
         <a href="/login" class="button">&emsp;&emsp;ろぐいん&emsp;&emsp;</a><br>
@@ -8,6 +9,6 @@
     </div>
     
 <% else %>
-    考えすぎな<%= current_user.name %>さんようこそ<br>
+    考えすぎな<%= current_user.name %>さん、ようこそ！<br>
     <a href="/signout" class="button">ろぐあうと</a>
 <% end%>
