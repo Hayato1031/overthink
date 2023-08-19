@@ -95,6 +95,11 @@ get '/archive' do
     erb :archive
 end
 
+get '/detail/:id' do
+    @aim = Aim.find(params[:id])
+    erb :detail
+end
+
 post '/select' do
     how_index = params[:how].to_i
     what_index = params[:what].to_i
