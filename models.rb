@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
     has_many :aims
 end
 
-class Aims < ActiveRecord::Base
+class Aim < ActiveRecord::Base
     belongs_to :user
 end

@@ -1,0 +1,17 @@
+かこのとうこうどーん！
+<% if session[:user] %>
+    <% @archives.each do |archive| %>
+        <div>
+            <div>
+                どのくらいの時間
+                <%= archive.how %>
+            </div>
+            <div>
+                なにをする
+                <%= archive.what %>
+            </div>
+        </div>
+    <% end %>
+<% else %>
+    ろぐいんしないと機能が使えないぞ～！
+<% end %>
