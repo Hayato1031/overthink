@@ -78,7 +78,7 @@ get '/signout' do
 end
 
 get '/result/:how_index/:what_index/:id' do
-    @result = Aims.find_by(id: params[:id])
+    @result = Aim.find_by(id: params[:id])
     
     if @result
         @id_boolean = true
@@ -86,6 +86,13 @@ get '/result/:how_index/:what_index/:id' do
         @id_boolean = false
     end
     erb :result
+end
+
+get '/archive' do
+    if session[:user]
+        @archives = User.find(session[:user]).aims
+    end
+    erb :archive
 end
 
 post '/select' do
@@ -98,17 +105,26 @@ post '/select' do
     p word_how
     p word_what
     
-    @aim = Aims.create(
-        how: word_how,
-        what: word_what,
-        user_id: session[:user]
-    )
+    if session[:user]
+        @aim = Aim.create(
+            how: word_how,
+            what: word_what,
+            user_id: session[:user]
+        )
+    else
+        @aim = Aim.create(
+            how: word_how,
+            what: word_what
+        )
+    end
+    
+    
     
     redirect "/result/#{how_index}/#{what_index}/#{@aim.id}"
 end
 
 post '/result/:how_index/:what_index/:id/reset' do
-    beforeAim = Aims.find(params[:id])
+    beforeAim = Aim.find(params[:id])
     beforeAim.destroy()
     
     how_index = params[:how_index].to_i
@@ -117,11 +133,18 @@ post '/result/:how_index/:what_index/:id/reset' do
     word_how = @time[how_index][rand(@time[how_index].size)]
     word_what =@action[what_index][rand(@action[what_index].size)]
     
-    @aim = Aims.create(
-        how: word_how,
-        what: word_what,
-        user_id: session[:user]
-    )
+    if session[:user]
+        @aim = Aim.create(
+            how: word_how,
+            what: word_what,
+            user_id: session[:user]
+        )
+    else
+        @aim = Aim.create(
+            how: word_how,
+            what: word_what
+        )
+    end
     
     redirect "/result/#{how_index}/#{what_index}/#{@aim.id}"
 end
