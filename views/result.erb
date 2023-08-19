@@ -1,12 +1,16 @@
 <% if @id_boolean %>
     <% if @result.user_id == session[:user] %>
-        けっか
-        <%= @result.how %>
-        <%= @result.what %>
-        <a href="/archive">これでいっか！</a>
-        もうどうしようもないひとへ
+        <h1>けっか</h1>
+        <h2><%= @result.how %>&emsp;<%= @result.what %></h2>
+
+        <div class="center">
+            <a href="/" class="button">これでいっか！</a>
+        </div>
+        <h3>もうどうしようもないひとへ</h3>
         <form action="/result/<%= params[:how_index] %>/<%= params[:what_index] %>/<%= @result.id %>/reset" method="post">
-            <input type="submit" value="りせっとぉぉぉ！！！">
+            <div class="center">
+                <input type="submit" value="りせっとぉ！！"class="input-box style2">
+            </div>
         </form>
     <% else %>
         このぺーじはよくわかんない！
