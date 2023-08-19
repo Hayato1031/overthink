@@ -86,12 +86,20 @@ body{
     color: #55593e;
   }
 
+  h3{
+    font-size: 30px;
+    text-align: center;
+    color: #55593e;
+  }
+
 .input-box{
     padding: 10px;
     font-size: 25px;
+    color: #55593e;
     border: 3px solid #55593e;
 }
 
+/* 入力ボックス */
 .style1{
     width: 500px;
     height: 50px;
@@ -99,10 +107,20 @@ body{
     background-color: #ecf4ec;
 }
 
+/* ボタン */
 .style2{
     width: 250px;
     height: 50px;
     font-size: 25px;
     border-radius: 17px;
     background-color: #aed6b7;
+}
+
+/* 選択ボックス */
+.style3{
+    width: 400px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 20px;
+    background-color: #ecf4ec;
 }
