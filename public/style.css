@@ -1,3 +1,9 @@
+body{
+    background: #ddf1e5
+}
+
+
+
 /*メニューをページ下部に固定*/
 #sp-fixed-menu{
     position: fixed;
@@ -46,3 +52,43 @@
     width: 95%;
     padding:10px;
  }
+
+ .button {
+    display: inline-block;
+    padding: 20px 50px;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: #aed6b7;
+    color: #55593e;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 8px solid #55593e;
+    cursor: pointer;
+  }
+
+  .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+  }
+
+  h1{
+    font-size: 60px;
+    text-align: center;
+    color: #55593e;
+  }
+
+  h2{
+    font-size: 40px;
+    text-align: center;
+    color: #55593e;
+  }
+
+.input-box{
+    width: 500px;
+    height: 50px;
+    padding: 10px;
+    font-size: 40px;
+}
