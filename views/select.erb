@@ -1,1 +1,29 @@
-セレクト画面
+<form action="/select" method="post">
+    <div>
+        <div>
+            <div>
+                どのくらいの期間の
+                <select name="how">
+                    <option value="0">今日中に</option>
+                    <option value="1">明日まで</option>
+                    <option value="2">数日以内</option>
+                    <option value="3">数か月以内</option>
+                    <option value="4">今後</option>
+                </select>
+            </div>
+            <div>
+                どんな不安なこと？
+                <select name="what">
+                    <option value="0">手が付けられない</option>
+                    <option value="1">問題が山積み</option>
+                    <option value="2">成功できる気がしない</option>
+                    <option value="3">緊張してしまう</option>
+                    <option value="4">その他</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="けっかもとむ">
+        </div>
+    </div>
+</form>
