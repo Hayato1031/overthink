@@ -1,4 +1,6 @@
-かこのとうこうどーん！
+<div class="hedder">
+    かこのきろく
+</div>
 <% if session[:user] %>
     <% @archives.each do |archive| %>
         <div>
@@ -13,5 +15,5 @@
         </div>
     <% end %>
 <% else %>
-    ろぐいんしないと機能が使えないぞ～！
+    <h3>ろぐいんしないと機能が使えないぞ～！</h3>
 <% end %>

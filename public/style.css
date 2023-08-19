@@ -74,6 +74,14 @@ body{
     /* min-height: 100vh; */
   }
 
+  .hedder{
+    background-color: #aed6b7;;
+    padding: 40px;
+    font-size: 60px;
+    text-align: center;
+    color: #55593e;
+  }
+
   h1{
     font-size: 60px;
     text-align: center;
