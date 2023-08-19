@@ -1,0 +1,6 @@
+<% if @aim.user_id == session[:user] %>
+    <%= @aim.how %><%= @aim.what %>
+    つくった日:<%= @aim.created_at %>
+<% else %>
+    このぺーじはみられないよ！
+<% end %>

@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2023_08_19_082910) do
     t.string "how"
     t.string "what"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
