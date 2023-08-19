@@ -77,7 +77,7 @@ get '/signout' do
     redirect '/account'
 end
 
-get '/result/:id' do
+get '/result/:how_index/:what_index/:id' do
     @result = Aims.find_by(id: params[:id])
     
     if @result
@@ -104,5 +104,24 @@ post '/select' do
         user_id: session[:user]
     )
     
-    redirect "/result/#{@aim.id}"
+    redirect "/result/#{how_index}/#{what_index}/#{@aim.id}"
+end
+
+post '/result/:how_index/:what_index/:id/reset' do
+    beforeAim = Aims.find(params[:id])
+    beforeAim.destroy()
+    
+    how_index = params[:how_index].to_i
+    what_index = params[:what_index].to_i
+    
+    word_how = @time[how_index][rand(@time[how_index].size)]
+    word_what =@action[what_index][rand(@action[what_index].size)]
+    
+    @aim = Aims.create(
+        how: word_how,
+        what: word_what,
+        user_id: session[:user]
+    )
+    
+    redirect "/result/#{how_index}/#{what_index}/#{@aim.id}"
 end

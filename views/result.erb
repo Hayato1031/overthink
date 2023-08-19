@@ -1,7 +1,13 @@
 <% if @id_boolean %>
     <% if @result.user_id == session[:user] %>
+        けっか
         <%= @result.how %>
         <%= @result.what %>
+        <a href="/">これでいっか！</a>
+        もうどうしようもないひとへ
+        <form action="/result/<%= params[:how_index] %>/<%= params[:what_index] %>/<%= @result.id %>/reset" method="post">
+            <input type="submit" value="りせっとぉぉぉ！！！">
+        </form>
     <% else %>
         このぺーじはよくわかんない！
     <% end %>
