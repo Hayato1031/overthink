@@ -1,0 +1,7 @@
+<% if session[:user] == nil %>
+    <a href="/login">ろぐいん</a>
+    <a href="/signup">しんきとーろく！</a>
+<% else %>
+    考えすぎな<%= current_user.name %>さんようこそ
+    <a href="/signout">ろぐあうと</a>
+<% end%>
