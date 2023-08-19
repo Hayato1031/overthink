@@ -1,0 +1,10 @@
+<% if @id_boolean %>
+    <% if @result.user_id == session[:user] %>
+        <%= @result.how %>
+        <%= @result.what %>
+    <% else %>
+        このぺーじはよくわかんない！
+    <% end %>
+<% else%>
+    このぺーっじはひょうじできなさそう！
+<% end %>
