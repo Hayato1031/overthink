@@ -35,11 +35,17 @@ GEM
     mustermann (2.0.2)
       ruby2_keywords (~> 0.0.1)
     netrc (0.11.0)
+    pg (1.5.3)
     pg (1.5.3-x64-mingw32)
     rack (2.2.8)
     rack-protection (2.2.4)
       rack
     rake (13.0.6)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rest-client (2.1.0-x64-mingw32)
       ffi (~> 1.9)
       http-accept (>= 1.7.0, < 2.0)
@@ -66,12 +72,14 @@ GEM
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
       unf_ext
+    unf_ext (0.0.8.2)
     unf_ext (0.0.8.2-x64-mingw32)
     webrick (1.8.1)
     zeitwerk (2.6.11)
 
 PLATFORMS
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   activerecord (~> 6.1)
