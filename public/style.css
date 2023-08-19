@@ -1,0 +1,48 @@
+/*メニューをページ下部に固定*/
+#sp-fixed-menu{
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    font-size: 0;
+    opacity: 0.9;
+    z-index: 99;
+ }
+ 
+ /*メニューを横並びにする*/
+ #sp-fixed-menu ul{
+    display: flex;
+    list-style: none;
+    padding:0;
+    margin:0;
+    width:100%;
+ }
+ 
+ #sp-fixed-menu li{
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    padding:0;
+    margin:0;
+    font-size: 14px;
+    border-right: 1px solid #fff;
+    background: #aed6b7;
+ }
+ 
+ /* 左側メニューを緑色に
+ #sp-fixed-menu li:first-child{
+    background: #38b435;
+ }s
+ 
+ /*左側メニューをオレンジ色に
+ #sp-fixed-menu li:last-child{
+    background: #f3a324;
+ } */
+ 
+ /*ボタンを調整*/
+ #sp-fixed-menu li a{
+    color: #55593e;
+    text-align: center;
+    display:block;
+    width: 95%;
+    padding:10px;
+ }
