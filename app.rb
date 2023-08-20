@@ -187,6 +187,6 @@ post '/review/:id/post' do
 end
 
 post "/review/:id/edit" do
-    Review.find_by(aim_id: params[:id]).update(anxiety: params[:unxiety], evaluation: params[:evaluation])
+    Review.find_by(aim_id: params[:id]).update(anxiety: params[:anxiety], evaluation: params[:evaluation])
     redirect "/detail/#{params[:id]}"
 end

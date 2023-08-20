@@ -26,15 +26,12 @@
         <!--ここからHTML形式-->
         <div>
             <div>
-                <a href="/detail/<%= archive.id %>" class="kiroku1"><%= archive.how %><%= archive.what %></a>
-            <div>
-                <%= date %>
-            </div>
-            <div>
-                <%= evaluationStar %>
-            </div>
-            <div>
-                <a href="/detail/<%= archive.id %>">これの詳細！</a>
+                <a href="/detail/<%= archive.id %>" class="kiroku1">
+                    <h2 class="kiroku1-date"><%= date %>&emsp;<%= archive.how %><%= archive.what %></h2>
+                    <div>
+                        <%= evaluationStar %>
+                    </div>
+                </a>
             </div>
         </div>
     <% end %>

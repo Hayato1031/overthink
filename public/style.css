@@ -74,6 +74,11 @@ body{
     text-decoration: none;
     cursor: pointer;
   }
+  
+  .kiroku1-date{
+      text-align: left;
+      font-weight: bold;
+  }
 
   .center{
     display: flex;
