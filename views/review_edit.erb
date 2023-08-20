@@ -1,0 +1,20 @@
+れびゅーを変更するよ！
+<form action="/review/<%= params[:id] %>/edit" method="post">
+    <div>
+        抱えてた不安をここにかこう！
+        <input name="anxiety" value="<%= @review.anxiety %>">    
+    </div>
+    <div>
+        試した気分転換の評価をしよう！
+        <select name="evaluation">
+            <option value="1">★☆☆☆☆</option>
+            <option value="2">★★☆☆☆</option>
+            <option value="3">★★★☆☆</option>
+            <option value="4">★★★★☆</option>
+            <option value="5">★★★★★</option>
+        </select>  
+    </div>
+    <div>
+        <input type="submit" value="れびゅーをのこす！">
+    </div>
+</form>
