@@ -1,6 +1,8 @@
 <% if @id_boolean %>
     <% if @result.user_id == session[:user] %>
-        <h1>けっか</h1>
+        <div class="hedder">
+            けっか
+        </div>
         <h2><%= @result.how %>&emsp;<%= @result.what %></h2>
         
         <% if session[:user] %>
