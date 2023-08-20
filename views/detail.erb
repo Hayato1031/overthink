@@ -7,7 +7,20 @@
         つくった日:<%= @aim.created_at %>
     </div>
     <h1><%= @aim.how %><%= @aim.what %></h1>
-    つくった日:<%= @aim.created_at %>
+    <%= @aim.how %><%= @aim.what %>
+    つくった日:<%= @date %>
+    <% if @review_boolean %>
+        <div>
+            <%= @review.anxiety %>
+            <%= @evaluation %>
+            <a href="#">れびゅーへんこう</a>
+        </div>
+    <% else %>
+        <div>
+            まだレビューはないよ
+            <a href="/review/<%= params[:id] %>">れびゅーついか</a>
+        </div>
+    <% end %>
 <% else %>
     <h3>このぺーじはみられないよ！</h3>
 <% end %>

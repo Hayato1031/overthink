@@ -3,9 +3,38 @@
 </div>
 <% if session[:user] %>
     <% @archives.each do |archive| %>
+        <!--データ成型用のRuby -->
+        <% date = archive.created_at.strftime('%Y年%m月%d日') %>
+        <% review = Review.find_by(aim_id: archive.id) %>
+        <% if review %>
+            <% evaluation = review.evaluation %>
+            <% if evaluation == 1 %>
+                <% evaluationStar = "★☆☆☆☆" %>
+            <% elsif  evaluation == 2 %>
+                <% evaluationStar = "★★☆☆☆" %>
+            <% elsif  evaluation == 3 %>
+                <% evaluationStar = "★★★☆☆" %>
+            <% elsif  evaluation == 4 %>
+                <% evaluationStar = "★★★★☆" %>
+            <% elsif  evaluation == 5 %>
+                <% evaluationStar = "★★★★★" %>
+            <% end %>
+        <% else %>
+            <% evaluationStar = "評価なし" %>
+        <% end %>
+        
+        <!--ここからHTML形式-->
         <div>
             <div>
                 <a href="/detail/<%= archive.id %>" class="kiroku1"><%= archive.how %><%= archive.what %></a>
+            <div>
+                <%= date %>
+            </div>
+            <div>
+                <%= evaluationStar %>
+            </div>
+            <div>
+                <a href="/detail/<%= archive.id %>">これの詳細！</a>
             </div>
         </div>
     <% end %>
