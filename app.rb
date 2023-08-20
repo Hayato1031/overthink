@@ -122,6 +122,11 @@ get '/review/:id' do
     erb :review
 end
 
+get '/review/:id/edit' do
+    @review = Review.find_by(aim_id: params[:id])
+    erb :review_edit
+end
+
 post '/select' do
     how_index = params[:how].to_i
     what_index = params[:what].to_i
@@ -178,5 +183,10 @@ end
 
 post '/review/:id/post' do
     Review.create(anxiety: params[:anxiety], evaluation: params[:evaluation], aim_id: params[:id])
+    redirect "/detail/#{params[:id]}"
+end
+
+post "/review/:id/edit" do
+    Review.find_by(aim_id: params[:id]).update(anxiety: params[:unxiety], evaluation: params[:evaluation])
     redirect "/detail/#{params[:id]}"
 end
