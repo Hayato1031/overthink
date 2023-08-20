@@ -10,4 +10,9 @@ end
 
 class Aim < ActiveRecord::Base
     belongs_to :user
+    belongs_to :review
+end
+
+class Review < ActiveRecord::Base
+    belongs_to :aim
 end

@@ -97,6 +97,7 @@ end
 
 get '/detail/:id' do
     @aim = Aim.find(params[:id])
+    @date = @aim.created_at.strftime('%Y年%m月%d日')
     erb :detail
 end
 

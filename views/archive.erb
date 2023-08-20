@@ -3,6 +3,7 @@
 </div>
 <% if session[:user] %>
     <% @archives.each do |archive| %>
+        <% data = archive.created_at.strftime('%Y年%m月%d日') %>
         <div>
             <div>
                 どのくらいの時間
@@ -11,6 +12,9 @@
             <div>
                 なにをする
                 <%= archive.what %>
+            </div>
+            <div>
+                <%= data %>
             </div>
             <div>
                 <a href="/detail/<%= archive.id %>">これの詳細！</a>
