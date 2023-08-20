@@ -1,4 +1,12 @@
+<div class="hedder">
+    きろくしょうさい
+</div>
+<br>
 <% if @aim.user_id == session[:user] %>
+    <div class="kiroku1">
+        つくった日:<%= @aim.created_at %>
+    </div>
+    <h1><%= @aim.how %><%= @aim.what %></h1>
     <%= @aim.how %><%= @aim.what %>
     つくった日:<%= @date %>
     <% if @review_boolean %>
@@ -14,5 +22,5 @@
         </div>
     <% end %>
 <% else %>
-    このぺーじはみられないよ！
+    <h3>このぺーじはみられないよ！</h3>
 <% end %>
