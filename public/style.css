@@ -70,7 +70,7 @@ body{
     margin: 0;
     font-size: 40px;
     color: #55593e;
-    text-align: right;
+    text-align: left;
     text-decoration: none;
     cursor: pointer;
   }
@@ -85,6 +85,11 @@ body{
     justify-content: center;
     align-items: center;
     /* min-height: 100vh; */
+  }
+
+  .star{
+    font-size: 50px;
+    text-align: center;
   }
 
   .hedder{

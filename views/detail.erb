@@ -6,14 +6,30 @@
     <div class="kiroku1">
         つくった日:<%= @aim.created_at %>
     </div>
-    <h1><%= @aim.how %><%= @aim.what %></h1>
-    <%= @aim.how %><%= @aim.what %>
-    つくった日:<%= @date %>
+    <br>&emsp;
+    <h2><%= @aim.how %><%= @aim.what %></h2>
+    <br>
+    <div class="kiroku1">
+        ひょうか
+    </div>
     <% if @review_boolean %>
         <div>
-            <%= @review.anxiety %>
-            <%= @evaluation %>
-            <a href="/review/<%= params[:id] %>/edit">れびゅーへんこう</a>
+            <br>
+            <div class="star">
+                <%= @evaluation %>
+            </div>
+            <br>
+            <div class="kiroku1">
+                不安だったこと
+            </div>
+            <br>
+            <div>
+                <%= @review.anxiety %>
+            </div>
+            <br>
+            <div class="center">
+                <a href="/review/<%= params[:id] %>/edit" class="button">れびゅーへんこう</a>
+            </div>
         </div>
     <% else %>
         <div>
