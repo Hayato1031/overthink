@@ -98,7 +98,28 @@ end
 get '/detail/:id' do
     @aim = Aim.find(params[:id])
     @date = @aim.created_at.strftime('%Y年%m月%d日')
+    if Review.find_by(aim_id: params[:id])
+        @review_boolean = true
+        @review = Review.find_by(aim_id: params[:id])
+        if @review.evaluation == 1
+            @evaluation = "★☆☆☆☆"
+        elsif  @review.evaluation == 2
+            @evaluation = "★★☆☆☆"
+        elsif  @review.evaluation == 3
+            @evaluation = "★★★☆☆"
+        elsif  @review.evaluation == 4
+            @evaluation = "★★★★☆"
+        elsif  @review.evaluation == 5
+            @evaluation = "★★★★★"
+        end
+    else
+        @review_boolean = false
+    end
     erb :detail
+end
+
+get '/review/:id' do
+    erb :review
 end
 
 post '/select' do
@@ -153,4 +174,9 @@ post '/result/:how_index/:what_index/:id/reset' do
     end
     
     redirect "/result/#{how_index}/#{what_index}/#{@aim.id}"
+end
+
+post '/review/:id/post' do
+    Review.create(anxiety: params[:anxiety], evaluation: params[:evaluation], aim_id: params[:id])
+    redirect "/detail/#{params[:id]}"
 end
