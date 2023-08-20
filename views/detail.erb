@@ -1,6 +1,13 @@
+<div class="hedder">
+    きろくしょうさい
+</div>
+<br>
 <% if @aim.user_id == session[:user] %>
-    <%= @aim.how %><%= @aim.what %>
+    <div class="kiroku1">
+        つくった日:<%= @aim.created_at %>
+    </div>
+    <h1><%= @aim.how %><%= @aim.what %></h1>
     つくった日:<%= @aim.created_at %>
 <% else %>
-    このぺーじはみられないよ！
+    <h3>このぺーじはみられないよ！</h3>
 <% end %>

@@ -5,15 +5,7 @@
     <% @archives.each do |archive| %>
         <div>
             <div>
-                どのくらいの時間
-                <%= archive.how %>
-            </div>
-            <div>
-                なにをする
-                <%= archive.what %>
-            </div>
-            <div>
-                <a href="/detail/<%= archive.id %>">これの詳細！</a>
+                <a href="/detail/<%= archive.id %>" class="kiroku1"><%= archive.how %><%= archive.what %></a>
             </div>
         </div>
     <% end %>

@@ -10,7 +10,6 @@ body{
     width: 100%;
     bottom: 0px;
     font-size: 0;
-    opacity: 0.9;
     z-index: 99;
  }
  
@@ -24,9 +23,11 @@ body{
  }
  
  #sp-fixed-menu li{
+    display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    width: 33%;
+    width: 33.33%;
     padding:0;
     margin:0;
     font-size: 14px;
@@ -34,23 +35,17 @@ body{
     background: #aed6b7;
  }
  
- /* 左側メニューを緑色に
- #sp-fixed-menu li:first-child{
-    background: #38b435;
- }s
- 
- /*左側メニューをオレンジ色に
- #sp-fixed-menu li:last-child{
-    background: #f3a324;
- } */
- 
  /*ボタンを調整*/
  #sp-fixed-menu li a{
     color: #55593e;
     text-align: center;
     display:block;
-    width: 95%;
+    width: 100%;
     padding:10px;
+ }
+
+ a,img{
+  display: inline-block;
  }
 
  .button {
@@ -67,6 +62,19 @@ body{
     cursor: pointer;
   }
 
+  .kiroku1 {
+    display: inline-block;
+    background-color: #cfebda;
+    width: 100%;
+    padding: 30px;
+    margin: 0;
+    font-size: 40px;
+    color: #55593e;
+    text-align: right;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
   .center{
     display: flex;
     justify-content: center;
@@ -75,9 +83,12 @@ body{
   }
 
   .hedder{
-    background-color: #aed6b7;;
+    background: #aed6b7;;
+    margin: 0;
+    width: 100%;
     padding: 40px;
     font-size: 60px;
+    font-weight: bold;
     text-align: center;
     color: #55593e;
   }
